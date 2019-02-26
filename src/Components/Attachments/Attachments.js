@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Attachment from "../Attachment/Attachment";
 
@@ -12,46 +11,33 @@ const styles = theme => ({
   root: {
     width: "100%"
   },
-  expansionPanelSummaryRoot: {
-    backgroundColor: "#9b9b9b"
-  },
   heading: {
     fontSize: theme.typography.pxToRem(15)
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
-  },
-  icon: {
-    verticalAlign: "bottom",
-    height: 20,
-    width: 20
-  },
-  details: {
-    alignItems: "center"
   },
   column: {
     flexBasis: "33.33%"
   },
-  helper: {
-    borderLeft: `2px solid ${theme.palette.divider}`,
-    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`
-  },
-  link: {
-    color: theme.palette.primary.main,
-    textDecoration: "none",
-    "&:hover": {
-      textDecoration: "underline"
-    }
-  },
   wrapperInnerStyle: {
-    width: "90%",
+    width: "95%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
   },
-  expansionPanelDetailsRootStyle: {
-    padding: 0
+  expansionPanelSummaryRoot: {
+    backgroundColor: "#9b9b9b"
+  },
+  anchorOriginBottomCenter: {
+    "&>div>div>div": {
+      width: "95%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    },
+    "&>div>div": {
+      width: "inherit",
+      display: "flex",
+      justifyContent: "center"
+    }
   }
 });
 
@@ -61,23 +47,29 @@ function DetailedExpansionPanel(props) {
     <div className={classes.root}>
       <ExpansionPanel
         defaultExpanded
-        classes={{ wrapperInner: classes.wrapperInnerStyle }}
+        classes={{ root: classes.anchorOriginBottomCenter }}
       >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
-          classes={{ expanded: classes.expansionPanelSummaryRoot }}
+          classes={{
+            root: classes.expansionPanelSummaryRoot
+          }}
         >
-          <div className={classes.column}>
-            <Typography className={classes.heading}>ATTACHMENTS</Typography>
+          <div>
+            <span style={{ color: "#4a4a4a", fontWeight: "bold" }}>
+              ATTACHMENTS
+            </span>
           </div>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails
-          classes={{
-            container: classes.details,
-            // wrapperInner: classes.wrapperInnerStyle,
-            root: classes.expansionPanelDetailsRootStyle
-          }}
-        />
+        <ExpansionPanelDetails />
+        <Attachment />
+        <Attachment />
+        <Attachment />
+        <Attachment />
+        <Attachment />
+        <Attachment />
+        <Attachment />
+        <Attachment />
         <Attachment />
         <Attachment />
         <Attachment />

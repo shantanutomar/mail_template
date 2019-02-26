@@ -8,6 +8,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import MailBody from "../../Components/MailBody/MailBody";
 import Button from "@material-ui/core/Button";
 import Attachments from "../../Components/Attachments/Attachments";
+import Radio from "@material-ui/core/Radio";
 
 const styles = theme => ({
   container1Root: {
@@ -75,6 +76,12 @@ const styles = theme => ({
   uploadButtonStyle: {
     display: "flex",
     width: "90%"
+  },
+  submitButton: {
+    margin: "10px"
+  },
+  radioRoot: {
+    padding: "0 !important"
   }
 });
 
@@ -83,7 +90,8 @@ class Container1 extends React.Component {
     days: 0,
     relativeDay: "",
     timeOption: "",
-    searchValue: ""
+    searchValue: "",
+    selectedValue: "a"
   };
   handleSearchChange = event => {
     this.setState({
@@ -95,6 +103,9 @@ class Container1 extends React.Component {
       searchValue: ""
     });
   };
+  handleChange = event => {
+    this.setState({ selectedValue: event.target.value });
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -105,9 +116,43 @@ class Container1 extends React.Component {
             <span className={classes.textStyle}> Select your send time</span>
           </section>
           <section>
-            <Email className={classes.icon} color="secondary" />
+            <Radio
+              checked={this.state.selectedValue === "a"}
+              className={classes.radioRoot}
+              onChange={this.handleChange}
+              value="a"
+              name="radio-button-demo"
+              aria-label="A"
+              icon={<Email className={classes.icon} color="#6f6f6f" />}
+              checkedIcon={<Email className={classes.icon} color="secondary" />}
+            />
+
+            <Radio
+              checked={this.state.selectedValue === "b"}
+              className={classes.radioRoot}
+              onChange={this.handleChange}
+              value="b"
+              name="radio-button-demo"
+              aria-label="B"
+              icon={<Sms className={classes.icon} color="#6f6f6f" />}
+              checkedIcon={<Sms className={classes.icon} color="secondary" />}
+            />
+            <Radio
+              checked={this.state.selectedValue === "c"}
+              className={classes.radioRoot}
+              onChange={this.handleChange}
+              value="c"
+              name="radio-button-demo"
+              aria-label="C"
+              icon={<PermIdentity className={classes.icon} color="#6f6f6f" />}
+              checkedIcon={
+                <PermIdentity className={classes.icon} color="secondary" />
+              }
+            />
+
+            {/* <Email className={classes.icon} color="secondary" />
             <Sms className={classes.icon} color="secondary" />
-            <PermIdentity className={classes.icon} color="secondary" />
+            <PermIdentity className={classes.icon} color="secondary" /> */}
           </section>
         </header>
         <section id="selectBox" className={classes.selectBoxStyle}>
@@ -155,7 +200,31 @@ class Container1 extends React.Component {
           </label>
         </section>
         <Attachments />
-        {/* <section>Attachment Panel</section> */}
+        <section
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "inherit"
+          }}
+        >
+          <Button
+            variant="outlined"
+            component="span"
+            color="secondary"
+            className={classes.submitButton}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="outlined"
+            component="span"
+            color="secondary"
+            active
+            className={classes.submitButton}
+          >
+            Save
+          </Button>
+        </section>
       </div>
     );
   }

@@ -40,6 +40,7 @@ function CustomizedInputBase(props) {
         placeholder="Search"
         value={props.searchValue}
         onChange={props.handleSearchChange}
+        autoComplete="true"
       />
       <IconButton
         className={classes.iconButton}

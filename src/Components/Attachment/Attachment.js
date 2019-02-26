@@ -2,22 +2,32 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
-import DeleteIcon from "@material-ui/icons/Delete";
+import SearchIcon from "@material-ui/icons/Search";
+import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    maxWidth: 752
+    width: "inherit"
+  },
+  listItemRoot: {
+    padding: 0,
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap"
   },
   demo: {
     backgroundColor: theme.palette.background.paper
   },
   title: {
     margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`
+  },
+  padding0: {
+    padding: "0 !important"
+  },
+  gridItem: {
+    maxWidth: "inherit"
   }
 });
 
@@ -25,16 +35,58 @@ const Attachment = props => {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} className={classes.gridItem}>
         <div className={classes.demo}>
           <List dense={true}>
-            <ListItem>
-              <ListItemText primary={`Attachment ${props.attachmentNo}`} />
-              <ListItemSecondaryAction>
-                <IconButton aria-label="Delete">
-                  <DeleteIcon />
-                </IconButton>
-              </ListItemSecondaryAction>
+            <ListItem className={classes.listItemRoot}>
+              <section style={{ margin: "5px 0" }}>
+                <span
+                  style={{
+                    fontSize: "16px",
+                    color: "#5d5d5d",
+                    letterSpacing: "0.4px"
+                  }}
+                >{`Attachment ${props.attachmentNo}`}</span>
+              </section>
+              <div
+                style={{
+                  display: "flex",
+                  width: "200px",
+                  justifyContent: "space-between"
+                }}
+              >
+                <section>
+                  <IconButton aria-label="View" className={classes.padding0}>
+                    <SearchIcon />
+                  </IconButton>
+                  <span
+                    style={{
+                      fontSize: "16px",
+                      color: "#5d5d5d",
+                      letterSpacing: "0.4px"
+                    }}
+                  >
+                    View
+                  </span>
+                </section>
+                <section>
+                  <IconButton
+                    aria-label="Download"
+                    className={classes.padding0}
+                  >
+                    <CloudDownloadIcon />
+                  </IconButton>
+                  <span
+                    style={{
+                      fontSize: "16px",
+                      color: "#5d5d5d",
+                      letterSpacing: "0.4px"
+                    }}
+                  >
+                    Download
+                  </span>
+                </section>
+              </div>
             </ListItem>
           </List>
         </div>

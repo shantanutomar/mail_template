@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+// import { grey } from "@material-ui/core/colors";
 
 const styles = theme => ({
   root: {
@@ -38,6 +39,15 @@ const styles = theme => ({
     padding: "6.5px 14px",
     fontSize: "14px",
     textAlign: "left"
+  },
+  selectMenuStyle: {
+    border: "1px solid grey",
+    boxShadow: "none",
+    borderRadius: "19px"
+  },
+  listItemStyle: {
+    padding: 0,
+    justifyContent: "center"
   }
 });
 
@@ -87,14 +97,28 @@ class SimpleSelect extends React.Component {
                 id="outlined-age-simple"
               />
             }
-            classes={{ select: classes.selectStyle }}
+            // todo
+            MenuProps={{
+              classes: {
+                paper: classes.selectMenuStyle
+              }
+            }}
+            classes={{
+              select: classes.selectStyle
+            }}
           >
-            <MenuItem value="">
+            <MenuItem value="" className={classes.listItemStyle}>
               <em>None</em>
             </MenuItem>
-            <MenuItem value={10}>1 Day</MenuItem>
-            <MenuItem value={20}>2 Day</MenuItem>
-            <MenuItem value={30}>3 Day</MenuItem>
+            <MenuItem value={10} className={classes.listItemStyle}>
+              1 Day
+            </MenuItem>
+            <MenuItem value={20} className={classes.listItemStyle}>
+              2 Day
+            </MenuItem>
+            <MenuItem value={30} className={classes.listItemStyle}>
+              3 Day
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControl variant="outlined" className={classes.formControl}>
@@ -122,12 +146,21 @@ class SimpleSelect extends React.Component {
                 id="outlined-age-simple"
               />
             }
+            MenuProps={{
+              classes: {
+                paper: classes.selectMenuStyle
+              }
+            }}
           >
-            <MenuItem value="">
+            <MenuItem value="" className={classes.listItemStyle}>
               <em>None</em>
             </MenuItem>
-            <MenuItem value={10}>Before</MenuItem>
-            <MenuItem value={20}>After</MenuItem>
+            <MenuItem value={10} className={classes.listItemStyle}>
+              Before
+            </MenuItem>
+            <MenuItem value={20} className={classes.listItemStyle}>
+              After
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControl
@@ -158,12 +191,21 @@ class SimpleSelect extends React.Component {
                 id="outlined-age-simple"
               />
             }
+            MenuProps={{
+              classes: {
+                paper: classes.selectMenuStyle
+              }
+            }}
           >
-            <MenuItem value="">
+            <MenuItem value="" className={classes.listItemStyle}>
               <em>None</em>
             </MenuItem>
-            <MenuItem value={10}>Check-In</MenuItem>
-            <MenuItem value={20}>Check-Out</MenuItem>
+            <MenuItem value={10} className={classes.listItemStyle}>
+              Check-In
+            </MenuItem>
+            <MenuItem value={20} className={classes.listItemStyle}>
+              Check-Out
+            </MenuItem>
           </Select>
         </FormControl>
       </form>
