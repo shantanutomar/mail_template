@@ -43,7 +43,9 @@ const styles = theme => ({
   selectMenuStyle: {
     border: "1px solid grey",
     boxShadow: "none",
-    borderRadius: "19px"
+    borderRadius: "19px",
+    top: "82.8924px !important",
+    transformOrigin: "0px 5px !important"
   },
   listItemStyle: {
     padding: 0,
@@ -107,17 +109,23 @@ class SimpleSelect extends React.Component {
               select: classes.selectStyle
             }}
           >
-            <MenuItem value="" className={classes.listItemStyle}>
-              <em>None</em>
-            </MenuItem>
             <MenuItem value={10} className={classes.listItemStyle}>
-              1 Day
+              Instantly
             </MenuItem>
             <MenuItem value={20} className={classes.listItemStyle}>
-              2 Day
+              1 Day
             </MenuItem>
             <MenuItem value={30} className={classes.listItemStyle}>
+              2 Day
+            </MenuItem>
+            <MenuItem value={40} className={classes.listItemStyle}>
               3 Day
+            </MenuItem>
+            <MenuItem value={50} className={classes.listItemStyle}>
+              4 Day
+            </MenuItem>
+            <MenuItem value={60} className={classes.listItemStyle}>
+              5 Day
             </MenuItem>
           </Select>
         </FormControl>
@@ -132,7 +140,7 @@ class SimpleSelect extends React.Component {
             }}
             htmlFor="outlined-age-simple"
           >
-            Age
+            Period
           </InputLabel>
           <Select
             classes={{ select: classes.selectStyle }}
@@ -152,13 +160,13 @@ class SimpleSelect extends React.Component {
               }
             }}
           >
-            <MenuItem value="" className={classes.listItemStyle}>
-              <em>None</em>
-            </MenuItem>
             <MenuItem value={10} className={classes.listItemStyle}>
-              Before
+              On
             </MenuItem>
             <MenuItem value={20} className={classes.listItemStyle}>
+              Before
+            </MenuItem>
+            <MenuItem value={30} className={classes.listItemStyle}>
               After
             </MenuItem>
           </Select>
@@ -177,7 +185,7 @@ class SimpleSelect extends React.Component {
             }}
             htmlFor="outlined-age-simple"
           >
-            Age
+            Time
           </InputLabel>
           <Select
             classes={{ select: classes.selectStyle }}
@@ -197,13 +205,13 @@ class SimpleSelect extends React.Component {
               }
             }}
           >
-            <MenuItem value="" className={classes.listItemStyle}>
-              <em>None</em>
-            </MenuItem>
             <MenuItem value={10} className={classes.listItemStyle}>
-              Check-In
+              Booking Receipt
             </MenuItem>
             <MenuItem value={20} className={classes.listItemStyle}>
+              Check-In
+            </MenuItem>
+            <MenuItem value={30} className={classes.listItemStyle}>
               Check-Out
             </MenuItem>
           </Select>
