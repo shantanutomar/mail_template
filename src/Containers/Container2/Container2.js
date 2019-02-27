@@ -12,6 +12,10 @@ const styles = theme => ({
   },
   expansionPanelSummaryRoot: {
     backgroundColor: theme.palette.primary.main
+  },
+  expansionPanelDetailsStyle: {
+    width: "100%",
+    padding: "8px 0px"
   }
 });
 
@@ -27,7 +31,7 @@ class Container2 extends React.Component {
               root: classes.expansionPanelSummaryRoot
             }}
           />
-          <ExpansionPanelDetails style={{ width: "100%", padding: "8px 0px" }}>
+          <ExpansionPanelDetails className={classes.expansionPanelDetailsStyle}>
             <Component2ExpansionPannel />
           </ExpansionPanelDetails>
         </ExpansionPanel>

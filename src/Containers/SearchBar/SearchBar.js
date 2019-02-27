@@ -22,11 +22,6 @@ const styles = {
   },
   iconButton: {
     padding: 10
-  },
-  divider: {
-    width: 1,
-    height: 28,
-    margin: 4
   }
 };
 

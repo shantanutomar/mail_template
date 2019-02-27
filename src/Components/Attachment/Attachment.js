@@ -28,6 +28,22 @@ const styles = theme => ({
   },
   gridItem: {
     maxWidth: "inherit"
+  },
+  attachmentStyle: {
+    fontSize: "16px",
+    color: "#5d5d5d",
+    letterSpacing: "0.4px"
+  },
+  iconContainerStyle: {
+    display: "flex",
+    width: "200px",
+    justifyContent: "space-between"
+  },
+  iconTextStyle: {
+    fontSize: "16px",
+    color: "#5d5d5d",
+    letterSpacing: "0.4px",
+    marginLeft: "5px"
   }
 });
 
@@ -41,33 +57,15 @@ const Attachment = props => {
             <ListItem className={classes.listItemRoot}>
               <section style={{ margin: "5px 0" }}>
                 <span
-                  style={{
-                    fontSize: "16px",
-                    color: "#5d5d5d",
-                    letterSpacing: "0.4px"
-                  }}
-                >{`Attachment ${props.attachmentNo}`}</span>
+                  className={classes.attachmentStyle}
+                >{`Attachment <No>`}</span>
               </section>
-              <div
-                style={{
-                  display: "flex",
-                  width: "200px",
-                  justifyContent: "space-between"
-                }}
-              >
+              <div className={classes.iconContainerStyle}>
                 <section>
                   <IconButton aria-label="View" className={classes.padding0}>
                     <SearchIcon />
                   </IconButton>
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      color: "#5d5d5d",
-                      letterSpacing: "0.4px"
-                    }}
-                  >
-                    View
-                  </span>
+                  <span className={classes.iconTextStyle}>View</span>
                 </section>
                 <section>
                   <IconButton
@@ -76,15 +74,7 @@ const Attachment = props => {
                   >
                     <CloudDownloadIcon />
                   </IconButton>
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      color: "#5d5d5d",
-                      letterSpacing: "0.4px"
-                    }}
-                  >
-                    Download
-                  </span>
+                  <span className={classes.iconTextStyle}>Download</span>
                 </section>
               </div>
             </ListItem>

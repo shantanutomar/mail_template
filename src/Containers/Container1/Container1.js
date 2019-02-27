@@ -78,7 +78,13 @@ const styles = theme => ({
     width: "90%"
   },
   submitButton: {
-    margin: "10px"
+    margin: "10px",
+    color: "white",
+    width: 100,
+    fontSize: 12,
+    "&:active": {
+      backgroundColor: "green"
+    }
   },
   radioRoot: {
     padding: "0 !important"
@@ -123,7 +129,7 @@ class Container1 extends React.Component {
               value="a"
               name="radio-button-demo"
               aria-label="A"
-              icon={<Email className={classes.icon} color="#6f6f6f" />}
+              icon={<Email className={classes.icon} color="action" />}
               checkedIcon={<Email className={classes.icon} color="secondary" />}
             />
 
@@ -134,7 +140,7 @@ class Container1 extends React.Component {
               value="b"
               name="radio-button-demo"
               aria-label="B"
-              icon={<Sms className={classes.icon} color="#6f6f6f" />}
+              icon={<Sms className={classes.icon} color="action" />}
               checkedIcon={<Sms className={classes.icon} color="secondary" />}
             />
             <Radio
@@ -144,15 +150,11 @@ class Container1 extends React.Component {
               value="c"
               name="radio-button-demo"
               aria-label="C"
-              icon={<PermIdentity className={classes.icon} color="#6f6f6f" />}
+              icon={<PermIdentity className={classes.icon} color="action" />}
               checkedIcon={
                 <PermIdentity className={classes.icon} color="secondary" />
               }
             />
-
-            {/* <Email className={classes.icon} color="secondary" />
-            <Sms className={classes.icon} color="secondary" />
-            <PermIdentity className={classes.icon} color="secondary" /> */}
           </section>
         </header>
         <section id="selectBox" className={classes.selectBoxStyle}>
@@ -208,7 +210,7 @@ class Container1 extends React.Component {
           }}
         >
           <Button
-            variant="outlined"
+            variant="contained"
             component="span"
             color="secondary"
             className={classes.submitButton}
@@ -216,10 +218,10 @@ class Container1 extends React.Component {
             Cancel
           </Button>
           <Button
-            variant="outlined"
+            variant="contained"
             component="span"
             color="secondary"
-            active
+            // active={true}
             className={classes.submitButton}
           >
             Save
