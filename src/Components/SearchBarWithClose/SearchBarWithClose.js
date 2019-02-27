@@ -25,7 +25,7 @@ const styles = {
   }
 };
 
-function CustomizedInputBase(props) {
+function SearchBarWithClose(props) {
   const { classes } = props;
 
   return (
@@ -49,8 +49,8 @@ function CustomizedInputBase(props) {
   );
 }
 
-CustomizedInputBase.propTypes = {
+SearchBarWithClose.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CustomizedInputBase);
+export default withStyles(styles)(SearchBarWithClose);

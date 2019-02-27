@@ -4,7 +4,7 @@ import Select from "../Select/Select";
 import Email from "@material-ui/icons/Email";
 import Sms from "@material-ui/icons/Sms";
 import PermIdentity from "@material-ui/icons/PermIdentity";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBarWithClose from "../../Components/SearchBarWithClose/SearchBarWithClose";
 import MailBody from "../../Components/MailBody/MailBody";
 import Button from "@material-ui/core/Button";
 import Attachments from "../../Components/Attachments/Attachments";
@@ -167,7 +167,7 @@ class Container1 extends React.Component {
         </section>
         <hr className={classes.horizontalLine} />
         <section className={classes.searchContainer}>
-          <SearchBar
+          <SearchBarWithClose
             searchValue={this.state.searchValue}
             handleSearchChange={this.handleSearchChange}
             handleSearchClose={this.handleSearchClose}
