@@ -12,11 +12,11 @@ const styles = {
     padding: "0px 4px",
     display: "flex",
     alignItems: "center",
-    width: 300,
+    width: 225,
     borderRadius: "70px",
     border: "1px solid lightgrey",
     boxShadow: "none",
-    height: 45,
+    height: 38,
     margin: 8
   },
   input: {
