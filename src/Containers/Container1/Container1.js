@@ -53,7 +53,8 @@ const styles = theme => ({
     margin: "8px 0",
     border: "1px solid grey",
     padding: "0px 27px",
-    borderRadius: "40px"
+    borderRadius: "40px",
+    textTransform: "capitalize"
   },
   input: {
     display: "none"
@@ -88,6 +89,11 @@ const styles = theme => ({
   },
   radioRoot: {
     padding: "0 !important"
+  },
+  "@media (min-width: 320px) and (max-width: 480px)": {
+    textStyle: {
+      fontSize: 12
+    }
   }
 });
 

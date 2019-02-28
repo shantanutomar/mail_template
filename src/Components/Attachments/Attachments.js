@@ -44,6 +44,11 @@ const styles = theme => ({
   },
   imageStyle: {
     height: 25
+  },
+  "@media (min-width: 320px) and (max-width: 480px)": {
+    expansionPanelDetailsRoot: {
+      width: "100%"
+    }
   }
 });
 

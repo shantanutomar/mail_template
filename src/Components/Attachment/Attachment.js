@@ -44,7 +44,29 @@ const styles = theme => ({
     color: "#5d5d5d",
     letterSpacing: "0.4px",
     marginLeft: "5px"
+  },
+  "@media (min-width: 320px) and (max-width: 480px)": {
+    listItemRoot: {
+      flexWrap: "nowrap"
+    },
+    iconTextStyle: {
+      marginLeft: "2px",
+      fontSize: "12px",
+      letterSpacing: "0.3px"
+    },
+    iconContainerStyle: {
+      width: 145
+    },
+    attachmentStyle: {
+      fontSize: "12px",
+      letterSpacing: "0.3px"
+    }
   }
+  // "@media (min-width: 480px)": {
+  //   togglePropGroupSelect: {
+  //     display: "none"
+  //   }
+  // }
 });
 
 const Attachment = props => {
