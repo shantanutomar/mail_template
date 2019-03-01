@@ -1,13 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
-import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-// import { grey } from "@material-ui/core/colors";
 
 const styles = theme => ({
   root: {
@@ -41,9 +38,9 @@ const styles = theme => ({
     textAlign: "left"
   },
   selectMenuStyle: {
+    borderRadius: "19px !important",
     border: "1px solid grey",
     boxShadow: "none",
-    borderRadius: "19px",
     top: "82.8924px !important",
     transformOrigin: "0px 5px !important"
   },
@@ -60,12 +57,6 @@ class SimpleSelect extends React.Component {
     labelWidth: 0
   };
 
-  componentDidMount() {
-    this.setState({
-      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
-    });
-  }
-
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -76,18 +67,6 @@ class SimpleSelect extends React.Component {
     return (
       <form className={classes.root} autoComplete="off">
         <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel
-            classes={{
-              outlined: classes.labelStyle,
-              shrink: classes.shrinkStyle
-            }}
-            ref={ref => {
-              this.InputLabelRef = ref;
-            }}
-            htmlFor="outlined-age-simple"
-          >
-            Day
-          </InputLabel>
           <Select
             value={this.state.age}
             onChange={this.handleChange}
@@ -99,7 +78,6 @@ class SimpleSelect extends React.Component {
                 id="outlined-age-simple"
               />
             }
-            // todo
             MenuProps={{
               classes: {
                 paper: classes.selectMenuStyle
@@ -130,18 +108,6 @@ class SimpleSelect extends React.Component {
           </Select>
         </FormControl>
         <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel
-            classes={{
-              outlined: classes.labelStyle,
-              shrink: classes.shrinkStyle
-            }}
-            ref={ref => {
-              this.InputLabelRef = ref;
-            }}
-            htmlFor="outlined-age-simple"
-          >
-            Period
-          </InputLabel>
           <Select
             classes={{ select: classes.selectStyle }}
             value={this.state.age}
@@ -175,18 +141,6 @@ class SimpleSelect extends React.Component {
           variant="outlined"
           classes={{ root: classes.formControlStyle }}
         >
-          <InputLabel
-            classes={{
-              outlined: classes.labelStyle,
-              shrink: classes.shrinkStyle
-            }}
-            ref={ref => {
-              this.InputLabelRef = ref;
-            }}
-            htmlFor="outlined-age-simple"
-          >
-            Time
-          </InputLabel>
           <Select
             classes={{ select: classes.selectStyle }}
             value={this.state.age}
